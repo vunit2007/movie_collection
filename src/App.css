@@ -4,9 +4,6 @@ body {
   background: #000000;
   width: 100vw;
   letter-spacing: 2px;
-  font-family: "Cabin", Sans-Serif;
-  font-size: 14px;
-  font-weight: 400;
   color: white;
 }
 *,
@@ -23,29 +20,19 @@ p {
   font-family: "Cabin", Sans-Serif;
   text-align: justify;
   font-size: 16px;
+  margin-bottom: 0px;
 }
-strong {
+strong, .date {
   font-size: 20px;
   font-family: "Roboto Condensed", Sans-Serif;
+  line-height: 18px
+}
+strong {
   color: #ff0f54;
   font-weight: 700;
 }
-a {
-  font-size: 14px;
-  color: #bebebe;
-  text-decoration: underline;
-  font-weight: 700;
-}
-i {
-  font-family: "Cabin", Sans-Serif;
+.date {
   color: gray;
-}
-a:hover,
-a:active {
-  color: #ff0f54;
-  -webkit-transition: 400ms;
-  transition: 400ms;
-  text-decoration: none;
 }
 
 /****** MAIN *********/
@@ -66,8 +53,6 @@ header {
   background-repeat: no-repeat;
   background-position: center bottom;
   height: 400px;
-  width: 100%;
-  overflow: hidden;
 }
 .fa-search {
   background: white;
@@ -89,18 +74,6 @@ header {
     rgba(255, 15, 84, 0.8)
   );
 }
-.default-image {
-  height: 450px;
-  width: 300px;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.8),
-    rgba(255, 15, 84, 0.9),
-    rgb(0, 0, 0)
-  );
-  background-blend-mode: overlay;
-  z-index: 1;
-}
 .red {
   background-color: rgba(255, 15, 84, 0.8);
   border-color: rgba(255, 15, 84, 0.8);
@@ -113,6 +86,7 @@ header {
   margin-top: auto;
   width: 75px;
   font-weight: 700;
+  letter-spacing: .5px;
 }
 .btn-secondary:hover {
   background-color: rgba(255, 15, 84, 0.8);
@@ -145,8 +119,11 @@ button:active,
   }
   strong,
   p,
-  i {
-    text-align: center;
+  .date {
+    text-align: justify;
+  }
+  .poster {
+    margin-bottom: 1rem;
   }
   .poster,
   .overview,

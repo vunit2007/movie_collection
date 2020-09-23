@@ -31,6 +31,8 @@ class App extends Component {
               console.log(Object.keys(movieRows).length);
             });
         this.setState({ rows: movieRows });
+        console.log("ROWS__STATE", {movieRows})
+
         this.setState({ nums: Object.keys(movieRows).length });
       },
       error: (xhr, status, err) => {
@@ -43,6 +45,8 @@ class App extends Component {
     const searchTerm = event.target.value;
     boundObject.performSearch(searchTerm);
   }
+
+
   render() {
     return (
       <div>
@@ -66,7 +70,7 @@ class App extends Component {
         </header>
         <section className="container-fluid">
           <div className="row">{this.state.rows}</div>
-          <p className="text-center search-num mt-4">
+          <p className="text-center search-num my-4">
             {this.state.nums} Search Results
           </p>
         </section>
