@@ -8,6 +8,7 @@ class MovieRow extends React.Component {
     };
     this.handleRed = this.handleRed.bind(this);
   }
+  //Owned button toggle on and off
   handleRed(){
     this.setState(state => ({
       isToggleOn: !state.isToggleOn
@@ -16,16 +17,18 @@ class MovieRow extends React.Component {
   render() {
     let { id, poster_src, poster_path, title, overview, release_date } = this.props.movie;
     console.log("poster", poster_path)
+    //Default image if there is no poster path for the movie.
     if (poster_path === null) {
       poster_src = "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg";
     }
-    // ({release_date.slice(0,4)})
+    //Format release date to only show year
     let year = null;
     if (release_date === "" || release_date === undefined){
       year = "N/A";
     } else {
       year = release_date.slice(0,4);
     }
+    //Make sure overview isn't more than 280 characters.
     if (overview.length > 280) {
       overview = overview.substring(0, 280) + "...";
     }
@@ -44,7 +47,8 @@ class MovieRow extends React.Component {
             <p className="mt-2 mb-3">{overview}</p>
             <button
               type="button"
-              name="owened"
+              name="owned"
+              // OWNED button toggle color red and gray
               className={`${this.state.isToggleOn? 'red' : 'btn-secondary'}`}
               onClick={this.handleRed}
             >  OWNED
